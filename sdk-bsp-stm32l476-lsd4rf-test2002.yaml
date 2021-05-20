@@ -114,4 +114,4 @@ example_projects:
   project_description: u8g2 OLED(sh1106) demo
   project_name: oled_sh1106_u8g2
   project_type: rt-thread|@full|@4.0.2
-board_repo_url: https://github.com/Forest-Rain/sdk-bsp-stm32l476-lsd4rf-test2002.git
+board_repo_url: https://gitee.com/forest-rain/sdk-bsp-stm32l476-lsd4rf-test2002.git

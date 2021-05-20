@@ -4,6 +4,8 @@ sdk-bsp-stm32l476-lsd4rf-test2002 是  [ART-Pi LoRa 开发套件](http://wsn.lie
 
 当前SDK包中包含了led、lora  radio、LoRaWAN End-Device 、低功耗、OLED等示例工程。
 
+
+
 <img src="documents/images/LSD4RF-TEST2002_EVK_Pic.png" alt="image-20201009181905422" style="zoom:50%;" />
 
 ## 目录结构
@@ -57,9 +59,13 @@ $ sdk-bsp-stm32l476-lsd4rf-test2002
   - rt-thread 源码
 ## 使用
 
-sdk-bsp-stm32l476-lsd4rf-test2002 当前支持 RT-Thread Studio 2.1.0版本
+
 
 ### 基于RT-Thread Studio 开发
+
+sdk-bsp-stm32l476-lsd4rf-test2002 当前基于RT-Thread Studio 2.1.0版本
+
+<img src="documents/images/rtt-studio_lsd4rf-test2002_sdk_import_1.gif" alt="image-20201009181905422" style="zoom:50%;" />
 
 1. 下载sdk-bsp-stm32l476-lsd4rf-test2002到本地，然后压缩为.zip格式的压缩包
 
@@ -72,7 +78,7 @@ sdk-bsp-stm32l476-lsd4rf-test2002 当前支持 RT-Thread Studio 2.1.0版本
 3. 选择.zip格式的支持包(sdk-bsp-stm32l476-lsd4rf-test2002.zip)
    <img src="documents/images/BSP_select_sdk_zip.png" alt="sdk_manager" style="zoom: 67%;" />
 
-4. 支持包安装完成后，选择基于 BSP 创建工程即可
+4. 支持包安装完成后，选择“基于开发板“创建项目——>”开发板 STM32L476-LSD4RF-TEST2002“->”模板工程“或者”示例工程“进行项目创建等
 
 <img src="documents\images\BSP_creat_RT-Thread_project.png" alt="image-20200926143024666" style="zoom:50%;" />
 
