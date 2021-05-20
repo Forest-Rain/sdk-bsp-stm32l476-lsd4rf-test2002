@@ -1,8 +1,8 @@
 ## 简介
 
-sdk-bsp-stm32l476-lsd4rf-test2002 是  [ART-Pi LoRa 开发套件](http://wsn.lierda.com/index.php/Home/product/detail/id/113.html)——RF评估板LSD4RF-TEST2002[STM32L4] EVB的开发板支持包，可用作开发SDK包，方便用户快速开发自己的应用程序。
+​	sdk-bsp-stm32l476-lsd4rf-test2002 是  [ART-Pi LoRa 开发套件](http://wsn.lierda.com/index.php/Home/product/detail/id/113.html)——RF评估板LSD4RF-TEST2002[STM32L4] EVB的开发板支持包，可用作开发SDK包，方便用户快速开发自己的应用程序。
 
-当前SDK包中包含了led、lora  radio、LoRaWAN End-Device 、低功耗、OLED等示例工程。
+​	sdk-bsp-stm32l476-lsd4rf-test2002 SDK当前包含了led、串口shell、lora  radio、LoRaWAN End-Device 、低功耗、OLED等示例工程。
 
 
 
@@ -44,7 +44,7 @@ $ sdk-bsp-stm32l476-lsd4rf-test2002
       - LED闪烁与串口Shell
       - 用户可基于该示例搭建基础项目模板
     - lrs101_lora_radio 
-      - lora radio Shell,支持单\双向、空口抓包等功能
+      - lora radio Shell,支持单\双向通信、空口抓包等功能
       - 用户可基于该示例构建lora-radio通信应用、功能测试等
     - lrs101_lorawan_ed
       - LoRaWAN End Device Shell，支持lorawan class A\C、confirm\unconfirm等功能
@@ -59,15 +59,13 @@ $ sdk-bsp-stm32l476-lsd4rf-test2002
   - rt-thread 源码
 ## 使用
 
-
-
 ### 基于RT-Thread Studio 开发
 
-sdk-bsp-stm32l476-lsd4rf-test2002 当前基于RT-Thread Studio 2.1.0版本
+sdk-bsp-stm32l476-lsd4rf-test2002 当前基于RT-Thread Studio 2.1.0版本，使用离线导入SDK的方式:
 
 <img src="documents/images/rtt-studio_lsd4rf-test2002_sdk_import_1.gif" alt="image-20201009181905422" style="zoom:50%;" />
 
-1. 下载sdk-bsp-stm32l476-lsd4rf-test2002到本地，然后压缩为.zip格式的压缩包
+1. 下载sdk-bsp-stm32l476-lsd4rf-test2002到本地，然后把sdk-bsp-stm32l476-lsd4rf-test2002压缩为.zip格式
 
 2. 打开 RT-Thread Studio 的包管理器，导入 LSD4RF-TEST2002 SDK 资源包
 
@@ -75,7 +73,7 @@ sdk-bsp-stm32l476-lsd4rf-test2002 当前基于RT-Thread Studio 2.1.0版本
 
 
 
-3. 选择.zip格式的支持包(sdk-bsp-stm32l476-lsd4rf-test2002.zip)
+3. 选择.zip格式的支持包(如本项目中的sdk-bsp-stm32l476-lsd4rf-test2002.zip)
    <img src="documents/images/BSP_select_sdk_zip.png" alt="sdk_manager" style="zoom: 67%;" />
 
 4. 支持包安装完成后，选择“基于开发板“创建项目——>”开发板 STM32L476-LSD4RF-TEST2002“->”模板工程“或者”示例工程“进行项目创建等
@@ -85,3 +83,4 @@ sdk-bsp-stm32l476-lsd4rf-test2002 当前基于RT-Thread Studio 2.1.0版本
 ## 注意
 
 1. 使用RT-Thread Studio开发时，注意工程所在文件路径尽量不要太深,必须因文件路径过长，导致可能出现的编译过程出错等情况。
+2. RT-Thread Studio离线导入SDK时，压缩包格式必须为.zip
