@@ -1,0 +1,12 @@
+[
+ {
+  "path": "/packages/iot/lorawan_ed_stack", 
+  "ver": "v1.0.3", 
+  "name": "LORAWAN_ED_STACK"
+ }, 
+ {
+  "path": "/packages/peripherals/lora_radio_driver", 
+  "ver": "v1.3.0", 
+  "name": "LORA_RADIO_DRIVER"
+ }
+]

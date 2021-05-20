@@ -1,0 +1,117 @@
+yaml_version: 3
+board:
+  buy_url_cn: https://item.taobao.com/item.htm?id=638999908986
+  buy_url_global: https://item.taobao.com/item.htm?id=638999908986
+  debug_interface: SWD
+  debugger: J-Link
+  description_en: RF EVB,Support LoRa SPI module、LoRaWAN Modem and so on
+  description_zh: RF评估板,无线模块支持LoRa SPI模块、LoRaWAN串口模块等，人机交互支持LED、按键、OLED、USB转UART等
+  emulator_machine: ''
+  large_image: documents/images/LSD4RF-TEST2002_EVK_Pic.png
+  name: STM32L476-LSD4RF-TEST2002
+  price_cn: N/A CNY
+  price_global: N/A USD
+  sale_contact_cn: wsn.lierda.com
+  sale_contact_global: wsn.lierda.com
+  small_image: documents/images/LSD4RF-TEST2002_EVB_Pic.png
+  vendor: LIERDA
+  version: '2.0'
+chip:
+  chip_name: STM32L476VGT6
+  clock_source: HSE
+  device_vendor: STMicroelectronics
+  family_name: STM32
+  rx_name: PA10
+  series_name: STM32L4
+  source_freq: '8000000'
+  sub_series_name: STM32L476
+  target_freq: '240000000'
+  tx_name: PA9
+  uart_name: UART1
+docs: []
+features:
+- Low Power MCU(STM32L4)
+- Support many kinds of LoRa SPI Modules、LoRaWAN Module
+- Support 3xLED、3xKEY、1.3 OLED、USB to UART TTL
+- DC5V or 1.5V*3 Battery Supply
+features_zh:
+- 低功耗MCU(STM32L4)
+- 支持多种LoRa SPI模块、LoRaWAN模块等
+- 支持3xLED、3xKEY、1.3 OLED、USB转串口TTL
+- DC5V或者1.5V*3干电池供电
+pkg_type: Board_Support_Packages
+pkg_vendor: LIERDA-WSN
+pkg_version: 1.0.0
+template_projects:
+- builtin_files:
+  - source_path_offset: projects/blink_led
+    target_path_offset: ''
+    files_and_folders:
+    - "*"
+  - source_path_offset: ''
+    target_path_offset: ''
+    files_and_folders:
+    - drivers
+    - libraries
+    - rt-thread
+  project_description: blink led and shell
+  project_name: blink_led
+  project_type: rt-thread|@full|@4.0.2
+example_projects:
+- builtin_files:
+  - source_path_offset: projects/lrs101_lora_radio
+    target_path_offset: ''
+    files_and_folders:
+    - "*"
+  - source_path_offset: ''
+    target_path_offset: ''
+    files_and_folders:
+    - drivers
+    - libraries
+    - rt-thread
+  project_description: lora radio shell test
+  project_name: lrs101_lora_radio
+  project_type: rt-thread|@full|@4.0.2
+- builtin_files:
+  - source_path_offset: projects/lrs101_lorawan_ed
+    target_path_offset: ''
+    files_and_folders:
+    - "*"
+  - source_path_offset: ''
+    target_path_offset: ''
+    files_and_folders:
+    - drivers
+    - libraries
+    - rt-thread
+  project_description: lorawan end device(A\C) shell test
+  project_name: lrs101_lorawan_ed
+  project_type: rt-thread|@full|@4.0.2
+- builtin_files:
+  - source_path_offset: projects/lrs101_lorawan_ed_pm
+    target_path_offset: ''
+    files_and_folders:
+    - "*"
+  - source_path_offset: ''
+    target_path_offset: ''
+    files_and_folders:
+    - drivers
+    - libraries
+    - rt-thread
+  project_description: orawan class_a low_power
+  project_name: lrs101_lorawan_ed_pm
+  project_type: rt-thread|@full|@4.0.2
+- builtin_files:
+  - source_path_offset: projects/oled_sh1106_u8g2
+    target_path_offset: ''
+    files_and_folders:
+    - "*"
+  - source_path_offset: ''
+    target_path_offset: ''
+    files_and_folders:
+    - drivers
+    - libraries
+    - rt-thread
+  project_description: u8g2 OLED(sh1106) demo
+  project_name: oled_sh1106_u8g2
+  project_type: rt-thread|@full|@4.0.2
+board_repo_url: https://github.com/Forest-Rain/sdk-bsp-stm32l476-lsd4rf-test2002.git

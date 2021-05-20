@@ -1,0 +1,6 @@
+clean2:
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(C_UPPER_DEPS)$(CXX_DEPS)$(SECONDARY_FLASH)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(CPP_DEPS)
+	-$(RM) $(OBJS) *.elf
+	-@echo ' '
+    
+*.elf: $(wildcard F:/K-Forest/RTOS/RT-Thread/artpi-master/artpi-lora/sdk-bsp-stm32l476-lsd4rf-test2002/projects/lrs101_lora_radio/linkscripts/STM32L476VGTx/link.lds)
