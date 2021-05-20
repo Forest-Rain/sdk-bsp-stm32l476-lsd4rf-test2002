@@ -1,6 +1,6 @@
 ## 简介
 
-sdk-bsp-stm32l476-lsd4rf-test2002 是  ART-Pi LoRa 开发套件——RF评估板LSD4RF-TEST2002[STM32L4] EVB的开发板支持包，可用作开发SDK包，方便用户快速开发自己的应用程序。
+sdk-bsp-stm32l476-lsd4rf-test2002 是  [ART-Pi LoRa 开发套件](http://wsn.lierda.com/index.php/Home/product/detail/id/113.html)——RF评估板LSD4RF-TEST2002[STM32L4] EVB的开发板支持包，可用作开发SDK包，方便用户快速开发自己的应用程序。
 
 当前SDK包中包含了led、lora  radio、LoRaWAN End-Device 、低功耗、OLED等示例工程。
 

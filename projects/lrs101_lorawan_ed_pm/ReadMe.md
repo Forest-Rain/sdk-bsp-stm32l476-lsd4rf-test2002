@@ -14,6 +14,8 @@ LoRaWAN-ED-Stack Class A Low Power示例程序主要功能是
 
 该例程基于LSD4RF-TEST2002[STM32L4]与LoRa模块转接板(LRS101)实现，该示例建立在lora-radio例程之上，LRS101使用了470M LoRa模块(LSD4RF-2R717N40[SX1268])。
 
+​	LoRaWAN-ED-Stack Class A Low Power详细的设计方案可以查看文章[基于PM2.0与STM32L4的LoRaWAN Class A低功耗设备设计](https://club.rt-thread.org/ask/article/2788.html)
+
 [LSD4RF-2R717N40[SX1268]](http://bbs.lierda.com/forum.php?mod=viewthread&tid=87)主要技术参数：
 
 - LoRa芯片：SX1268
