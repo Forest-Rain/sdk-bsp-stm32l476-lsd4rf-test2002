@@ -4,6 +4,8 @@
 
 本例程主要实现了基于u8g2软件包驱动OLED屏幕，并动态刷新显示RTC实时时间。
 
+u8g2 OLED示例设计与使用说明可进一步查看 [基于RT-Thread与STM32L4的单色图形库u8g2与OLED应用笔记 ](https://club.rt-thread.org/ask/article/2789.html)。
+
 ## 硬件说明
 
 ​	OLED（Organic Light-Emitting Diode）屏幕采用的驱动芯片为SH1106，接口电路如下
