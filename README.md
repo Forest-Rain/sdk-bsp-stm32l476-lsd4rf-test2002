@@ -34,11 +34,11 @@ $ sdk-bsp-stm32l476-lsd4rf-test2002
   - 描述 LSD4RF-TEST2002[STM32L4]的硬件信息等
 - documents
   - 图片等
--  libraries
+- libraries
   - STM32L4固件库等
 - drivers
   - 通用外设驱动
--  projects
+- projects
   - 示例工程文件夹
     - blink_led  
       - LED闪烁与串口Shell
@@ -55,7 +55,7 @@ $ sdk-bsp-stm32l476-lsd4rf-test2002
     - oled_sh1106_u8g2
       - 基于u8g2的OLED屏幕应用，动态显示RTC时间等
       - 用户可基于该示例构建OLED屏幕字符、图像等显示功能
--  rt-thread
+- rt-thread
   - rt-thread源码
 ## 使用
 
