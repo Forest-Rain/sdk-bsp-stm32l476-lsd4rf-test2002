@@ -31,11 +31,11 @@ $ sdk-bsp-stm32l476-lsd4rf-test2002
 ```
 
 - sdk-bsp-stm32l476-lsd4rf-test2002.yaml
-  - 描述 LSD4RF-TEST2002[STM32L4]的硬件信息
+  - 描述 LSD4RF-TEST2002[STM32L4]的硬件信息等
 - documents
-  - 图片 等
+  - 图片等
 -  libraries
-  - STM32L4 固件库等
+  - STM32L4固件库等
 - drivers
   - 通用外设驱动
 -  projects
@@ -56,7 +56,7 @@ $ sdk-bsp-stm32l476-lsd4rf-test2002
       - 基于u8g2的OLED屏幕应用，动态显示RTC时间等
       - 用户可基于该示例构建OLED屏幕字符、图像等显示功能
 -  rt-thread
-  - rt-thread 源码
+  - rt-thread源码
 ## 使用
 
 ### 基于RT-Thread Studio 开发
