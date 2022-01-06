@@ -464,7 +464,7 @@ uint8_t lorawan_ed_set_deveui(uint8_t *deveui)
 
     mibReq.Type = MIB_DEV_EUI;
     mibReq.Param.DevEui = deveui;
-    status = LoRaMacMibGetRequestConfirm( &mibReq );
+    status = LoRaMacMibSetRequestConfirm( &mibReq );
 
     if( status == LORAMAC_STATUS_OK )
     {
@@ -490,8 +490,8 @@ uint8_t lorawan_ed_set_joineui(uint8_t *joineui)
 
     memcpy1(lorawan_ed_device_id.JoinEui, joineui, 8);
 
-    mibReq.Type = MIB_DEV_EUI;
-    mibReq.Param.DevEui = joineui;
+    mibReq.Type = MIB_JOIN_EUI;
+    mibReq.Param.JoinEui = joineui;
     status = LoRaMacMibSetRequestConfirm( &mibReq );
 
     if(status == LORAMAC_STATUS_OK )
@@ -520,7 +520,7 @@ uint8_t lorawan_ed_set_appkey(uint8_t *appkey)
     memcpy1(lorawan_ed_device_id.AppKey, appkey, 16);
 
     mibReq.Type = MIB_APP_KEY;
-    mibReq.Param.DevEui = appkey;
+    mibReq.Param.AppKey = appkey;
     status = LoRaMacMibSetRequestConfirm( &mibReq );
 
     if(status == LORAMAC_STATUS_OK )
@@ -579,7 +579,7 @@ uint8_t lorawan_ed_set_appskey(uint8_t *appskey)
     memcpy1(lorawan_ed_device_id.AppSKey, appskey, 16);
 
     mibReq.Type = MIB_APP_S_KEY;
-    mibReq.Param.DevEui = appskey;
+    mibReq.Param.AppSKey = appskey;
     status = LoRaMacMibSetRequestConfirm( &mibReq );
 
     if(status == LORAMAC_STATUS_OK )
@@ -608,7 +608,7 @@ uint8_t lorawan_ed_set_nwkskey(uint8_t *nwkskey)
     memcpy1(lorawan_ed_device_id.NwkSEncKey, nwkskey, 16);
 
     mibReq.Type = MIB_NWK_S_ENC_KEY;
-    mibReq.Param.DevEui = nwkskey;
+    mibReq.Param.NwkSEncKey = nwkskey;
     status = LoRaMacMibSetRequestConfirm( &mibReq );
 
     if(status == LORAMAC_STATUS_OK )
@@ -738,40 +738,40 @@ void lorawan_ed_stack_init(lorawan_ed_app_callback_t *callbacks)
 #ifndef LORAWAN_ED_STACK_USING_ON_RTOS_RT_THREAD
     LoRaMacCallbacks.MacProcessNotify = lorawan_ed_app_callback->MacProcessNotify;
 #endif
-
+    
 #if defined( REGION_AS923 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_AS923 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: AS923");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: AS923"); 
 #elif defined( REGION_AU915 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_AU915 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: AU915");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: AU915"); 
 #elif defined( REGION_CN470 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_CN470 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: CN470");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: CN470"); 
 #elif defined( REGION_CN470S )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_CN470S );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: CN470S");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: CN470S"); 
 #elif defined( REGION_CN779 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_CN779 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: CN779");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: CN779"); 
 #elif defined( REGION_EU433 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_EU433 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: EU433");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: EU433"); 
 #elif defined( REGION_IN865 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_IN865 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: IN865");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: IN865"); 
 #elif defined( REGION_EU868 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_EU868 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: EU868");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: EU868"); 
 #elif defined( REGION_KR920 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_KR920 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: KR920");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: KR920"); 
 #elif defined( REGION_US915 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_US915 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: US915");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: US915"); 
 #elif defined( REGION_RU864 )
     LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks, LORAMAC_REGION_RU864 );
-    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: RU864");
+    LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "REGION: RU864"); 
 #else
     #error "Please define a region in the compiler options."
 #endif
@@ -1024,18 +1024,18 @@ void lorawan_ed_stack_init(lorawan_ed_app_callback_t *callbacks)
     mibReq.Type = MIB_DEVICE_CLASS;
     mibReq.Param.Class= lorawan_ed_init_params.Class;
     LoRaMacMibSetRequestConfirm( &mibReq );
-    LORAWAN_ED_DEBUG_LOG( LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "Class Type:       %c","ABC"[mibReq.Param.Class]);
-
+    LORAWAN_ED_DEBUG_LOG( LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "Class Type:       %c","ABC"[mibReq.Param.Class]); 
+                      
     mibReq.Type = MIB_ADR;
     mibReq.Param.AdrEnable = lorawan_ed_init_params.AdrEnable;
     LoRaMacMibSetRequestConfirm( &mibReq );
-    LORAWAN_ED_DEBUG_LOG( LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "ADR:              %s", mibReq.Param.AdrEnable?"Enable":"Disable");
+    LORAWAN_ED_DEBUG_LOG( LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "ADR:              %s", mibReq.Param.AdrEnable?"Enable":"Disable"); 
     LORAWAN_ED_DEBUG_LOG( LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "Datarate:         DR_%d", lorawan_ed_init_params.TxDatarate);
 
 #if defined( REGION_EU868 ) || defined( REGION_RU864 ) || defined( REGION_CN779 ) || defined( REGION_EU433 )
     LoRaMacTestSetDutyCycleOn( LORAWAN_DUTYCYCLE_ON );
 #endif
-
+      
     mibReq.Type = MIB_SYSTEM_MAX_RX_ERROR;
     mibReq.Param.SystemMaxRxError = LORAWAN_ED_STACK_MAC_PARAMETER_SYSTEM_MAX_RX_ERROR;
     LoRaMacMibSetRequestConfirm( &mibReq );
@@ -1044,7 +1044,7 @@ void lorawan_ed_stack_init(lorawan_ed_app_callback_t *callbacks)
     LORAWAN_ED_DEBUG_LOG(LORAWAN_ED_STACK_DEBUG_APS, DBG_LVL, "Channels Mask: %04X-%04X-%04X-%04X-%04X-%04X\r\n",
             channelMask[0], channelMask[1], channelMask[2], channelMask[3], channelMask[4], channelMask[5]);
 
-    /*set Mac state Idle*/
+    /*set Mac state in Idle*/
     LoRaMacStart( );
 
 #if ( defined LORAWAN_ED_STACK_MAC_PARAMETER_ACTIVATION_TYPE_ABP ) || (defined LORAWAN_ED_STACK_USING_ACTIVATION_TYPE_ABP)
