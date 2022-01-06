@@ -492,6 +492,7 @@ uint8_t lorawan_ed_set_joineui(uint8_t *joineui)
 
     mibReq.Type = MIB_JOIN_EUI;
     mibReq.Param.JoinEui = joineui;
+
     status = LoRaMacMibSetRequestConfirm( &mibReq );
 
     if(status == LORAMAC_STATUS_OK )
